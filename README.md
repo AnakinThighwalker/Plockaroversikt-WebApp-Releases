@@ -23,6 +23,10 @@ filename remains compatible. If the first import cannot run, ASK Pulse names
 the required exports that are missing or unusable. After the baseline exists,
 ordinary picker updates need only a new Plocklogg Full export.
 
+Normal Windows duplicate names such as `plocklogg (1).csv` are accepted. If
+several completed copies exist, the newest file is imported and older copies
+are left untouched.
+
 The first setup needs internet access and 64-bit Windows 10/11 or Windows
 Server 2016+. It does not require Git, a GitHub account, Node.js, Python, or
 administrator rights. An organization can still block BAT or PowerShell files
