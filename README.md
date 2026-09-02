@@ -15,6 +15,12 @@ configuration, or source exports are included.
    `http://127.0.0.1:3010` in the default browser.
 4. Import that PC's ASK exports locally through ASK Pulse.
 
+The first import needs Plocklogg Full, Pallastning, Item Alias, and the export
+from the actual ASK tab **Statuslogg Kundorder**. Rename that downloaded order
+status export to `till Antonio.csv`; this is only a legacy importer filename,
+not the name of an ASK tab. After the baseline exists, ordinary picker updates
+need only a new Plocklogg Full export.
+
 The first setup needs internet access and 64-bit Windows 10/11 or Windows
 Server 2016+. It does not require Git, a GitHub account, Node.js, Python, or
 administrator rights. An organization can still block BAT or PowerShell files
