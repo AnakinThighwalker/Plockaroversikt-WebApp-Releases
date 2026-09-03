@@ -16,16 +16,23 @@ configuration, or source exports are included.
 4. Import that PC's ASK exports locally through ASK Pulse.
 
 The first import needs Plocklogg Full, Pallastning, Item Alias, and the export
-from the actual ASK tab **Statuslogg Kundorder**. Its normal
-`Statuslogg Kundorder.csv` or `v_ask_statuslog_customer_order.csv` filename is
-accepted directly, so no renaming is required. The older `till Antonio.csv`
-filename remains compatible. If the first import cannot run, ASK Pulse names
-the required exports that are missing or unusable. After the baseline exists,
-ordinary picker updates need only a new Plocklogg Full export.
+from the actual ASK tab **Statuslogg Kundorder**. Exact compatible names include
+`plocklogg`, `Plocklogg Full`, or `v_ask_pick_log_full`; `pallastning`,
+`Pallastningslogg`, or `v_ask_palletloading_log`; `Item Alias`, `Item_Alias`,
+`ItemAlias`, `Artikel Alias`, or `ArtikelAlias`; and `Statuslogg Kundorder`,
+`v_ask_statuslog_customer_order`, `Orderstatus`, `Order Status`, or legacy
+`till Antonio`. Append `.csv`. Optional movements accept `v_ask_trans_log`,
+`Translogg`, `Transaktionslogg`, `Förflyttningslogg`, or
+`Forflyttningslogg`. No renaming is required when an export already uses one
+of these names. If the first import cannot run, ASK Pulse names the required
+exports that are missing or unusable. After the baseline exists, ordinary
+picker updates need only a new Plocklogg Full export.
 
-Normal Windows duplicate names such as `plocklogg (1).csv` are accepted. If
-several completed copies exist, the newest file is imported and older copies
-are left untouched.
+Every name is case-insensitive and supports a 14-digit ASK export timestamp,
+the normal Windows `(N)` duplicate suffix, or both. If several completed copies
+exist, the newest validated file is imported and older copies are left
+untouched. Similar or partial names are rejected, and every recognized file
+must still pass its complete feed-specific header validation.
 
 The first setup needs internet access and 64-bit Windows 10/11 or Windows
 Server 2016+. It does not require Git, a GitHub account, Node.js, Python, or
@@ -34,7 +41,8 @@ through AppLocker or another administrator policy.
 
 ## Updates and integrity
 
-Settings checks the public release manifest manually. Every package is bound
+Settings checks the public release manifest manually. Immutable releases are
+enabled on this artifact repository. Every package is bound
 to its size and SHA-256 digest and the manifest is verified with the public key
 embedded in the installer. Signature verification is not bypassed.
 
