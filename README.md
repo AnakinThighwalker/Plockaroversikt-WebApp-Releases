@@ -41,6 +41,12 @@ through AppLocker or another administrator policy.
 
 ## Updates and integrity
 
+V1.0.7 fixes the Windows command launch used by **Check for updates** and adds
+specific error messages. If an older installation reports only that the update
+could not be confirmed, download and run the latest installer above once as your
+normal Windows user. This updates the app and its updater while preserving local
+ASK data. Subsequent updates use the Settings button. No GitHub login is required.
+
 Settings checks the public release manifest manually. Immutable releases are
 enabled on this artifact repository. Every package is bound
 to its size and SHA-256 digest and the manifest is verified with the public key
