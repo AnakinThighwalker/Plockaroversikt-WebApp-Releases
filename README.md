@@ -41,11 +41,13 @@ through AppLocker or another administrator policy.
 
 ## Updates and integrity
 
-V1.0.7 fixes the Windows command launch used by **Check for updates** and adds
-specific error messages. If an older installation reports only that the update
-could not be confirmed, download and run the latest installer above once as your
-normal Windows user. This updates the app and its updater while preserving local
-ASK data. Subsequent updates use the Settings button. No GitHub login is required.
+V1.0.8 fixes the updater being terminated when the old Webapp closes. V1.0.7
+fixed Windows command quoting but did not fully fix the restart. Two consecutive
+Settings-button updates through the normal launcher have now passed testing.
+If an older installation cannot update, download and run the latest installer
+above once as your normal Windows user. This preserves local ASK data. Later
+updates use the Settings button and refresh the updater from the verified signed
+package too. No GitHub login is required.
 
 Settings checks the public release manifest manually. Immutable releases are
 enabled on this artifact repository. Every package is bound
